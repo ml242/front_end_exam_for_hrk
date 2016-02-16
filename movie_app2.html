@@ -1,0 +1,54 @@
+<head>
+  <title>movie_app2</title>
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-1 top-bar" style="background-color: white">
+				search box
+			</div>
+			<div class="col-md-10 top-bar" style="background-color: red">
+				discover
+			</div>
+			<div class="col-md-1 top-bar" style="background-color: white; border: 1px solid red">
+				name
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row body">
+			<div class="col-md-1 table-col" style="">
+				menu
+			</div>
+			<div class="col-md-10 table-col" style="border: 1px solid black">
+				<ul class="row">
+					{{> movies}}
+				</ul>
+			</div>
+			<div class="col-md-1 table-col" style="">
+				friends list
+			</div>
+		</div>
+	</div>
+
+</body>
+
+
+<template name="movies">
+  {{#each movies}}
+		{{>movie_item }}
+  {{/each}}
+</template>
+
+<template name="movie_item">
+	<li class="col-md-2 movie-item">
+		<div class="row">
+			<img src='https://image.tmdb.org/t/p/w185{{poster_path}}'>
+		</div>
+		<div class="row">
+			<a href="">{{title}}</a>	
+		</div>
+	</li>
+</template>
